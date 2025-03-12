@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class alsada : MonoBehaviour
 {
+    public float yFloat;
     public GameObject centerEyeAnchor;
 
     // Start is called before the first frame update
@@ -15,6 +16,6 @@ public class alsada : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position=new Vector3(transform.position.x,centerEyeAnchor.transform.position.y-0.20f,transform.position.z);
+        transform.position=new Vector3(transform.position.x,centerEyeAnchor.transform.position.y-yFloat,transform.position.z);
     }
 }
