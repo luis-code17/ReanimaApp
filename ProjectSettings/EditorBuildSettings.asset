@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/reviuvrGame.unity
+    path: Assets/Scenes/reviuvrGameCAT.unity
     guid: 6c004d7222da9c646a640df9e9d7f794
   - enabled: 1
     path: Assets/Scenes/SnapInteractable.unity
@@ -14,6 +14,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TryPareds.unity
     guid: 9ac76d62e0ea3114ba16e297afd11398
+  - enabled: 1
+    path: Assets/Scenes/preguntasEN.unity
+    guid: f7753363d8cbdab438ee92a9f128be42
+  - enabled: 1
+    path: Assets/Scenes/preguntasES.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/reviuvrGameEN.unity
+    guid: 64c72e1180352c44fbca0157197bf49f
+  - enabled: 1
+    path: Assets/Scenes/reviuvrGameES.unity
+    guid: 9d88490818749c94596b513317140378
+  - enabled: 1
+    path: Assets/Scenes/preguntasCAT.unity
+    guid: 9c6e18ae08e310b4ea22ecdbaf723ce6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1703383cc6a070e41a7fa97088796f17, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9dda50cfed2280049877429a7fd2cacf, type: 2}

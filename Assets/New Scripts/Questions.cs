@@ -22,6 +22,7 @@ public class Preguntas
 
 public class Questions : MonoBehaviour
 {
+    private string idioma_respuesta;
     int puntuacio = 0;
     public string idioma;
     public GameObject canvas;
@@ -36,6 +37,10 @@ public class Questions : MonoBehaviour
     public TMPro.TextMeshPro  resposta2;
     public TMPro.TextMeshPro  resposta3;
     public TMPro.TextMeshPro  resposta4;
+
+    public TMPro.TextMeshPro  continuarRes;
+    public TMPro.TextMeshPro  reintentarRes;
+
 
 
     public TMPro.TextMeshProUGUI pregunta;
@@ -79,8 +84,23 @@ public class Questions : MonoBehaviour
     {
         if (preguntaActualIndex >= 5)  
         {
-
-            resultado.text = "Has acertado " + puntuacio + " de 5 preguntas.";
+            if(idioma_respuesta == "CAT")
+            {
+                resultado.text = "Has encertat " + puntuacio + " de 5 preguntes.";
+                continuarRes.text = "Continuar";
+                reintentarRes.text = "Tornar a intentar";
+            }
+            else if(idioma_respuesta == "EN")
+            {
+                resultado.text = "You have answered " + puntuacio + " of 5 questions.";
+                continuarRes.text = "Continue";
+                reintentarRes.text = "Try again";
+            }else
+            {
+                resultado.text = "Has acertado " + puntuacio + " de 5 preguntas.";
+                continuarRes.text = "Continuar";
+                reintentarRes.text = "Volver a intentar";
+            }
             canvas.SetActive(false);
             canvasResponse.SetActive(true);
             return;
@@ -221,6 +241,110 @@ public class Questions : MonoBehaviour
             ]
         }";
 
+        string jsonCAT = @"
+        {
+            ""preguntas"": [
+                {
+                    ""pregunta"": ""Què significa RCP?"",
+                    ""resposta1"": ""Reanimació cardiopulmonar."",
+                    ""resposta2"": ""Recuperació cardiopulmonar."",
+                    ""resposta3"": ""Reacció cardíaca primària."",
+                    ""resposta4"": ""Rehabilitació cardíaca professional.""
+                },
+                {
+                    ""pregunta"": ""Quin és el primer pas abans d'iniciar RCP?"",
+                    ""resposta1"": ""Verificar seguretat."",
+                    ""resposta2"": ""Començar compressions."",
+                    ""resposta3"": ""Donar ventilacions."",
+                    ""resposta4"": ""Trucar a l'hospital.""
+                },
+                {
+                    ""pregunta"": ""Quantes compressions per minut s'han de fer?"",
+                    ""resposta1"": ""100-120."",
+                    ""resposta2"": ""Menys de 60."",
+                    ""resposta3"": ""Al voltant de 50."",
+                    ""resposta4"": ""No importa.""
+                },
+                {
+                    ""pregunta"": ""Quina és la profunditat correcta de les compressions?"",
+                    ""resposta1"": ""5 cm."",
+                    ""resposta2"": ""Menys de 2 cm."",
+                    ""resposta3"": ""3 cm."",
+                    ""resposta4"": ""Més de 10 cm.""
+                },
+                {
+                    ""pregunta"": ""Quina és la relació de compressions i ventilacions?"",
+                    ""resposta1"": ""30:2."",
+                    ""resposta2"": ""15:1."",
+                    ""resposta3"": ""40:5."",
+                    ""resposta4"": ""No fixa.""
+                },
+                {
+                    ""pregunta"": ""Què s'ha de fer si la víctima no respon?"",
+                    ""resposta1"": ""Iniciar RCP."",
+                    ""resposta2"": ""Donar aigua."",
+                    ""resposta3"": ""Esperar ambulància."",
+                    ""resposta4"": ""Sacsejar la víctima.""
+                },
+                {
+                    ""pregunta"": ""Quan s'ha d'utilitzar un DEA?"",
+                    ""resposta1"": ""Immediatament, sense pols."",
+                    ""resposta2"": ""Si està conscient."",
+                    ""resposta3"": ""Només en nens."",
+                    ""resposta4"": ""Després de 30 minuts.""
+                },
+                {
+                    ""pregunta"": ""Com s'han de col·locar les mans en RCP?"",
+                    ""resposta1"": ""Al centre del pit."",
+                    ""resposta2"": ""Al costat esquerre."",
+                    ""resposta3"": ""Sota el melic."",
+                    ""resposta4"": ""Al coll.""
+                },
+                {
+                    ""pregunta"": ""Cada quant s'han de rotar els reanimadors?"",
+                    ""resposta1"": ""Cada 2 minuts."",
+                    ""resposta2"": ""Cada 10 minuts."",
+                    ""resposta3"": ""Quan es cansin."",
+                    ""resposta4"": ""No és necessari.""
+                },
+                {
+                    ""pregunta"": ""Què fer si la víctima comença a respirar?"",
+                    ""resposta1"": ""Aturar RCP, posició de recuperació."",
+                    ""resposta2"": ""Continuar RCP."",
+                    ""resposta3"": ""Més compressions."",
+                    ""resposta4"": ""Esperar que parli.""
+                },
+                {
+                    ""pregunta"": ""Què fer si la víctima vomita durant RCP?"",
+                    ""resposta1"": ""Girar-la de costat."",
+                    ""resposta2"": ""No fer res."",
+                    ""resposta3"": ""Netejar la boca."",
+                    ""resposta4"": ""Reprendre compressions.""
+                },
+                {
+                    ""pregunta"": ""Què fer si no hi ha un DEA disponible?"",
+                    ""resposta1"": ""Continuar RCP."",
+                    ""resposta2"": ""Esperar ajuda."",
+                    ""resposta3"": ""Buscar un DEA."",
+                    ""resposta4"": ""Donar ventilacions.""
+                },
+                {
+                    ""pregunta"": ""Quin és el ritme correcte de les compressions?"",
+                    ""resposta1"": ""Ràpid i ferm."",
+                    ""resposta2"": ""Lent i suau."",
+                    ""resposta3"": ""No importa."",
+                    ""resposta4"": ""Interrompre freqüentment.""
+                },
+                {
+                    ""pregunta"": ""Com saber si les compressions són efectives?"",
+                    ""resposta1"": ""Moviment del pit."",
+                    ""resposta2"": ""Pols visible."",
+                    ""resposta3"": ""Cos calent."",
+                    ""resposta4"": ""Respiració normal.""
+                }
+            ]
+        }";
+
         string jsonEN = @"
         {
             ""preguntas"": [
@@ -326,12 +450,19 @@ public class Questions : MonoBehaviour
         }";
 
 
-        if(idioma == "EN")
+        if(idioma == "CAT")
         {
+            idioma_respuesta = "CAT";
+            preguntas = JsonUtility.FromJson<Preguntas>(jsonCAT);
+        }
+        else if(idioma == "EN")
+        {
+            idioma_respuesta = "EN";
             preguntas = JsonUtility.FromJson<Preguntas>(jsonEN);
         }
         else
         {
+            idioma_respuesta = "ES";
             preguntas = JsonUtility.FromJson<Preguntas>(jsonES);
         }
 
@@ -389,9 +520,9 @@ public class Questions : MonoBehaviour
         Start();
     }
 
-    public void nextScene()
+    public void nextScene(string scene)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("reviuvrGame");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 }
 

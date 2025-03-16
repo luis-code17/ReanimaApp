@@ -3008,7 +3008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7114770129336771053, guid: d6733f35cecdc984c9d50925eb25939e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7114770129336771054, guid: d6733f35cecdc984c9d50925eb25939e, type: 3}
       propertyPath: m_Enabled
@@ -3929,7 +3929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b4e366826b0b540bb44c88efb1a9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idioma: EN
+  idioma: CAT
   canvas: {fileID: 727529092}
   canvasResponse: {fileID: 854097961}
   audio: {fileID: 1071091246}
@@ -3939,6 +3939,8 @@ MonoBehaviour:
   resposta2: {fileID: 2057959633}
   resposta3: {fileID: 825590716}
   resposta4: {fileID: 136715995}
+  continuarRes: {fileID: 0}
+  reintentarRes: {fileID: 0}
   pregunta: {fileID: 1834093457}
   resultado: {fileID: 1924405716}
 --- !u!114 &1071759062 stripped
@@ -4070,7 +4072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3718601612112823234, guid: 323cb65d2594c79499a11a99ff0fb347, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: reviuvrGameEN
+      value: reviuvrGameCAT
       objectReference: {fileID: 0}
     - target: {fileID: 3718601612112823234, guid: 323cb65d2594c79499a11a99ff0fb347, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4159,7 +4161,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3159839825100900288, guid: 323cb65d2594c79499a11a99ff0fb347, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 323cb65d2594c79499a11a99ff0fb347, type: 3}
 --- !u!4 &1110443796 stripped
 Transform:
@@ -4720,7 +4725,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3159839825100900288, guid: 323cb65d2594c79499a11a99ff0fb347, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 323cb65d2594c79499a11a99ff0fb347, type: 3}
 --- !u!4 &1237182272 stripped
 Transform:
@@ -5427,7 +5435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7114770129336771053, guid: d6733f35cecdc984c9d50925eb25939e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7114770129336771054, guid: d6733f35cecdc984c9d50925eb25939e, type: 3}
       propertyPath: m_Enabled
@@ -7683,10 +7691,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2077007883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 66.78}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 88, y: -78.780075}
+  m_SizeDelta: {x: 144, y: 66.78}
   m_Pivot: {x: 0.5, y: -0.0000010877848}
 --- !u!114 &1834093457
 MonoBehaviour:
@@ -7975,10 +7983,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1419156646}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88, y: -78.780075}
-  m_SizeDelta: {x: 144, y: 66.78}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 66.78}
   m_Pivot: {x: 0.5, y: -0.0000010877848}
 --- !u!1 &1925288681
 GameObject:

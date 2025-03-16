@@ -7,20 +7,21 @@ public class TriggerSound : MonoBehaviour
 
     public AudioSource audio1; // Primer audio
     public AudioSource audio2; // Segundo audio
-private void OnTriggerEnter(Collider other)
-{
-    Debug.Log("Trigger activado por: " + other.name);
+    public AudioSource audio3; // Tercer audio
 
-    if (other.CompareTag("Player") || other.name.Contains("Hand")) 
+    public void startReanimation()
     {
-        Debug.Log("Las manos han activado el trigger");
-
         botonDesfibrilador.SetActive(false);
         reaninimat.SetActive(true);
 
+        if (!audio3.isPlaying) audio3.Play();
+
+        Invoke("PlayAudio", 10f);
+    }
+
+    void PlayAudio()
+    {
         if (!audio1.isPlaying) audio1.Play();
         if (!audio2.isPlaying) audio2.Play();
     }
-}
-
 }
