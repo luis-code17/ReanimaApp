@@ -23,6 +23,7 @@ public class Preguntas
 public class Questions : MonoBehaviour
 {
     int puntuacio = 0;
+    public string idioma;
     public GameObject canvas;
 
     public GameObject canvasResponse;
@@ -116,7 +117,7 @@ public class Questions : MonoBehaviour
 
     void LoadQuestions()
     {
-        string json = @"
+        string jsonES = @"
         {
             ""preguntas"": [
                 {
@@ -220,8 +221,120 @@ public class Questions : MonoBehaviour
             ]
         }";
 
+        string jsonEN = @"
+        {
+            ""preguntas"": [
+                {
+                    ""pregunta"": ""What does CPR stand for?"",
+                    ""resposta1"": ""Cardiopulmonary resuscitation."",
+                    ""resposta2"": ""Cardiopulmonary recovery."",
+                    ""resposta3"": ""Primary cardiac reaction."",
+                    ""resposta4"": ""Professional cardiac rehabilitation.""
+                },
+                {
+                    ""pregunta"": ""What is the first step before starting CPR?"",
+                    ""resposta1"": ""Check for safety."",
+                    ""resposta2"": ""Start compressions."",
+                    ""resposta3"": ""Give ventilations."",
+                    ""resposta4"": ""Call the hospital.""
+                },
+                {
+                    ""pregunta"": ""How many compressions per minute should be performed?"",
+                    ""resposta1"": ""100-120."",
+                    ""resposta2"": ""Less than 60."",
+                    ""resposta3"": ""Around 50."",
+                    ""resposta4"": ""It doesn’t matter.""
+                },
+                {
+                    ""pregunta"": ""What is the correct compression depth?"",
+                    ""resposta1"": ""5 cm."",
+                    ""resposta2"": ""Less than 2 cm."",
+                    ""resposta3"": ""3 cm."",
+                    ""resposta4"": ""More than 10 cm.""
+                },
+                {
+                    ""pregunta"": ""What is the compression-to-ventilation ratio?"",
+                    ""resposta1"": ""30:2."",
+                    ""resposta2"": ""15:1."",
+                    ""resposta3"": ""40:5."",
+                    ""resposta4"": ""Not fixed.""
+                },
+                {
+                    ""pregunta"": ""What should you do if the victim does not respond?"",
+                    ""resposta1"": ""Start CPR."",
+                    ""resposta2"": ""Give water."",
+                    ""resposta3"": ""Wait for an ambulance."",
+                    ""resposta4"": ""Shake the victim.""
+                },
+                {
+                    ""pregunta"": ""When should an AED be used?"",
+                    ""resposta1"": ""Immediately, if no pulse."",
+                    ""resposta2"": ""If they are conscious."",
+                    ""resposta3"": ""Only on children."",
+                    ""resposta4"": ""After 30 minutes.""
+                },
+                {
+                    ""pregunta"": ""Where should hands be placed during CPR?"",
+                    ""resposta1"": ""Center of the chest."",
+                    ""resposta2"": ""Left side."",
+                    ""resposta3"": ""Below the navel."",
+                    ""resposta4"": ""On the neck.""
+                },
+                {
+                    ""pregunta"": ""How often should rescuers switch roles?"",
+                    ""resposta1"": ""Every 2 minutes."",
+                    ""resposta2"": ""Every 10 minutes."",
+                    ""resposta3"": ""When they get tired."",
+                    ""resposta4"": ""Not necessary.""
+                },
+                {
+                    ""pregunta"": ""What should you do if the victim starts breathing?"",
+                    ""resposta1"": ""Stop CPR, place in recovery position."",
+                    ""resposta2"": ""Continue CPR."",
+                    ""resposta3"": ""Give more compressions."",
+                    ""resposta4"": ""Wait for them to speak.""
+                },
+                {
+                    ""pregunta"": ""What should you do if the victim vomits during CPR?"",
+                    ""resposta1"": ""Turn them to one side."",
+                    ""resposta2"": ""Do nothing."",
+                    ""resposta3"": ""Clean their mouth."",
+                    ""resposta4"": ""Resume compressions.""
+                },
+                {
+                    ""pregunta"": ""What if no AED is available?"",
+                    ""resposta1"": ""Continue CPR."",
+                    ""resposta2"": ""Wait for help."",
+                    ""resposta3"": ""Look for an AED."",
+                    ""resposta4"": ""Give ventilations.""
+                },
+                {
+                    ""pregunta"": ""What is the correct compression rhythm?"",
+                    ""resposta1"": ""Fast and firm."",
+                    ""resposta2"": ""Slow and gentle."",
+                    ""resposta3"": ""It doesn’t matter."",
+                    ""resposta4"": ""Interrupt frequently.""
+                },
+                {
+                    ""pregunta"": ""How do you know if compressions are effective?"",
+                    ""resposta1"": ""Chest movement."",
+                    ""resposta2"": ""Visible pulse."",
+                    ""resposta3"": ""Warm body."",
+                    ""resposta4"": ""Normal breathing.""
+                }
+            ]
+        }";
 
-        preguntas = JsonUtility.FromJson<Preguntas>(json);
+
+        if(idioma == "EN")
+        {
+            preguntas = JsonUtility.FromJson<Preguntas>(jsonEN);
+        }
+        else
+        {
+            preguntas = JsonUtility.FromJson<Preguntas>(jsonES);
+        }
+
     }
 
   

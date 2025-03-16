@@ -344,7 +344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Repetitions (up to 10)
+  m_text: Repeticions (fins a 10)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -1328,8 +1328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 149.18364, y: -61.21}
-  m_SizeDelta: {x: 266.36728, y: 98.42}
+  m_AnchoredPosition: {x: 149.18364, y: -53.01}
+  m_SizeDelta: {x: 266.36728, y: 82.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &180343891
 MonoBehaviour:
@@ -1351,9 +1351,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "If you are only doing compressions, keep doing them until help arrives
-    or until the person breathes spontaneously. \r\n\r\nor until the person breathes
-    spontaneously."
+  m_text: "Si nom\xE9s est\xE0s fent compressions, segueix fent-les fins que arribi
+    ajuda \n\no fins que la persona respiri de manera espont\xE0nia."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -1879,8 +1878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 149.18364, y: -151.43}
-  m_SizeDelta: {x: 266.36728, y: 278.86}
+  m_AnchoredPosition: {x: 149.18364, y: -143.23}
+  m_SizeDelta: {x: 266.36728, y: 262.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276312197
 MonoBehaviour:
@@ -1902,10 +1901,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The AED includes two adhesive electrodes. \r\n\r\nRemove the protective
-    plastic.\r\n\r\nOne electrode is placed on the upper right side of the chest
-    (below the collarbone).\r\n\r\nThe other one is placed on the lower left side,
-    above the lower edge of the sides.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n"
+  m_text: "El DEA inclou dos d\u2019el\xE8ctrodes adhesius. \n\nRetira el pl\xE0stic
+    protector.\n\nUn el\xE8ctrode es col\xB7loca a la part superior dreta del t\xF2rax
+    (per sota de la clav\xEDcula)\n\nL\u2019altre a la part inferior esquerra, per
+    sobre de la vora inferior de les costelles.\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -3374,7 +3373,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.1681, y: -0.0693}
-  m_SizeDelta: {x: 298.36728, y: 155.23}
+  m_SizeDelta: {x: 298.36728, y: 171.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &490770757
 MonoBehaviour:
@@ -5125,10 +5124,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Performs strong and fast compressions, with a depth of at least 5 cm in
-    the pit.\r\n\r\nThe speed should be 100-120 compressions per minute. \r\n\r\nYou
-    have a white square on the side of the chest to follow the rhythm of compressions
-    every time it is green a compression has to be performed."
+  m_text: "Realitza compressions fortes i r\xE0pides, amb una profunditat de m\xEDnim
+    5 cm al pit\n\nLa velocitat ha de ser 100-120 compresions per minut \n\nTens
+    un cuadrat blanc al costat del cos per seguir el ritme de compresions cada cop
+    que es posi verd s'ha de fer una compresio"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -6842,7 +6841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Compressions
+  m_text: Compresiones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7734,7 +7733,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.298, y: 0.1638}
-  m_SizeDelta: {x: 298.36728, y: 122.42}
+  m_SizeDelta: {x: 298.36728, y: 106.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527906735
 MonoBehaviour:
@@ -9493,9 +9492,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Place one hand on the center of the person's chest, just above the sternum.
-    \r\n\r\nPlace the other hand on the first one, interlock your fingers and keep
-    your arms straight.\r\n\r\n\r\n\r\n\n\n\r\n"
+  m_text: "Col\xB7loca una m\xE0 sobre el centre del pit de la persona, just sobre
+    l'estern\xF3 \n\nCol\xB7loca l'altra m\xE0 sobre la primera, entrella\xE7a els
+    dits i mantingues els bra\xE7os rectes.\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -10478,8 +10477,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 149.18364, y: -77.615}
-  m_SizeDelta: {x: 266.36728, y: 131.23}
+  m_AnchoredPosition: {x: 149.18364, y: -85.815}
+  m_SizeDelta: {x: 266.36728, y: 147.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938022573
 MonoBehaviour:
@@ -10501,17 +10500,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Let the AED analyze the heart rhythm.
-
-    
-
-    Do not touch the person
-    while this analysis is being done.
-
-    
-
-    If the AED detects that the person
-    needs an electrical shock, it will prompt you to press the shock button.'
+  m_text: "Deixa que el DEA analitzi el ritme card\xEDac\n\nNo toquis la persona
+    mentre es fa aquesta an\xE0lisi.\n\nSi el DEA detecta que la persona necessita
+    una desc\xE0rrega el\xE8ctrica, t\u2019indicar\xE0 que premis el bot\xF3 de la
+    desc\xE0rrega."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -13802,7 +13794,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.0232, y: -0.0564}
-  m_SizeDelta: {x: 298.36728, y: 302.86}
+  m_SizeDelta: {x: 298.36728, y: 286.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081561761
 MonoBehaviour:

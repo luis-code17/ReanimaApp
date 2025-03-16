@@ -3929,7 +3929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b4e366826b0b540bb44c88efb1a9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idioma: ES
+  idioma: EN
   canvas: {fileID: 727529092}
   canvasResponse: {fileID: 854097961}
   audio: {fileID: 1071091246}
