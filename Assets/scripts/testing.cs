@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
-using System.Collections;
-public class testing : MonoBehaviour
+
+public class Testing : MonoBehaviour
 {
     public GameObject leftWrist;
     public GameObject rightWrist;
@@ -10,44 +10,50 @@ public class testing : MonoBehaviour
     public GameObject desfribilador;
     public GameObject gameObject;
     public GameObject gameObject2;
+    public GameObject gameObject3;
+    public GameObject gameObject4;
     public TextMeshProUGUI textoMesh;
-    private int contador = 0;
 
-    private bool haPasadoPosiciones = false; // Variable para verificar si ha pasado de la posición 12 a la posición 6
-   
+    private int contador = 0;
+    private bool haPasadoPosiciones = false; // Para verificar si ha pasado de la posición alta a baja
+
     void Update()
     {
-        float leftWristCoordinates = leftWrist.transform.position.y * 100;
-        int parteEnteraL = Mathf.FloorToInt(leftWristCoordinates);
+        // Obtener la posición Y de ambas manos en valores enteros (multiplicado por 100)
+        float leftWristY = leftWrist.transform.position.y * 100;
+        int leftY = Mathf.FloorToInt(leftWristY);
 
-        float rightWristCoordinates = rightWrist.transform.position.y * 100;
-        int parteEnteraR = Mathf.FloorToInt(rightWristCoordinates);
+        float rightWristY = rightWrist.transform.position.y * 100;
+        int rightY = Mathf.FloorToInt(rightWristY);
 
-        if (parteEnteraL == 11 || parteEnteraL == 12)
+        // Si cualquiera de las dos manos está en posición alta (11 o 12)
+        if (leftY == 11 || leftY == 12 || rightY == 11 || rightY == 13 || rightY == 14 )
         {
-            haPasadoPosiciones = true; // Usuario está en posición 12
+            haPasadoPosiciones = true;
         }
-        
-        if (parteEnteraL == 6 || parteEnteraL == 7 || parteEnteraL == 8)
+
+        // Si cualquiera de las dos manos baja a 6, 7 u 8
+        if ((leftY == 6 || leftY == 7 || leftY == 8) && (rightY == 7 || rightY == 8 || rightY == 9 || rightY == 10 ))
         {
-            if (haPasadoPosiciones) // Si ha pasado de la posición 12 a la 6
+            if (haPasadoPosiciones) // Si antes estuvo en la posición alta
             {
                 contador++;
-                haPasadoPosiciones = false; // Reinicia la variable para futuros movimientos
+                haPasadoPosiciones = false; // Reiniciar para la próxima detección
             }
         }
 
-        textoMesh.text = contador.ToString(); 
+        // Actualizar el texto con el contador
+        textoMesh.text = contador.ToString();
 
-        if (contador == 10) 
+        // Si el contador llega a 10, activar el desfribilador y otros objetos
+        if (contador == 10)
         {
             desfribilador.SetActive(true);
             gameObject.SetActive(false);
             gameObject2.SetActive(true);
+            gameObject3.SetActive(false);
+            gameObject4.SetActive(true);
             audioSource.Play();
-         
         }
     }
 }
-
-
