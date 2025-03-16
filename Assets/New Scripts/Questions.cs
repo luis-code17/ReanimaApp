@@ -278,7 +278,7 @@ public class Questions : MonoBehaviour
 
     public void nextScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("reviuvr");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("reviuvrGame");
     }
 }
 

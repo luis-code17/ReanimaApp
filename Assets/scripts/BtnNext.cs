@@ -8,9 +8,6 @@ public class BtnNext : MonoBehaviour
     public GameObject infoCompresion2;   
     public GameObject infoCompresion3;
 
-    public GameObject infoParche1;   
-    public GameObject infoParche2;
-
     
 
 
