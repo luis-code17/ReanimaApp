@@ -22,7 +22,6 @@ public class Preguntas
 
 public class Questions : MonoBehaviour
 {
-    private string idioma_respuesta;
     int puntuacio = 0;
     public string idioma;
     public GameObject canvas;
@@ -82,8 +81,9 @@ public class Questions : MonoBehaviour
 
     void ShowQuestion()
     {
-        if (preguntaActualIndex >= 5)  
+        if (preguntaActualIndex >= 5) 
         {
+            string idioma_respuesta = PlayerPrefs.GetString("idioma");
             if(idioma_respuesta == "CAT")
             {
                 resultado.text = "Has encertat " + puntuacio + " de 5 preguntes.";
@@ -452,17 +452,17 @@ public class Questions : MonoBehaviour
 
         if(idioma == "CAT")
         {
-            idioma_respuesta = "CAT";
+            PlayerPrefs.SetString("idioma", "CAT"); 
             preguntas = JsonUtility.FromJson<Preguntas>(jsonCAT);
         }
         else if(idioma == "EN")
         {
-            idioma_respuesta = "EN";
+            PlayerPrefs.SetString("idioma", "EN");
             preguntas = JsonUtility.FromJson<Preguntas>(jsonEN);
         }
         else
         {
-            idioma_respuesta = "ES";
+            PlayerPrefs.SetString("idioma", "ES");
             preguntas = JsonUtility.FromJson<Preguntas>(jsonES);
         }
 

@@ -4,36 +4,18 @@ using Oculus.Interaction;
 
 public class Menu : MonoBehaviour
 {
-    public string sceneName; 
 
-    private void Start()
+    public void HandleButtonPress(string sceneName)
     {
-        PokeInteractable pokeButton = GetComponent<PokeInteractable>();
-
-        if (pokeButton != null)
-        {
-            pokeButton.WhenSelect.AddListener(HandleButtonPress);
-        }
+        SceneManager.LoadScene(sceneName);
     }
 
-    private void HandleButtonPress()
-    {
-        if (!string.IsNullOrEmpty(sceneName))
-        {
-            SceneManager.LoadScene(sceneName); 
-        }
-        else
-        {
-            QuitGame(); // Salir del juego si sceneName está vacío
-        }
-    }
-
-    private void QuitGame()
+    public void QuitGame()
     {
         #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false; // Detener juego en el editor
+            UnityEditor.EditorApplication.isPlaying = false; // Stop game in editor
         #else
-            Application.Quit(); // Cerrar la aplicación en VR
+            Application.Quit(); // Quit the application in VR
         #endif
     }
 }

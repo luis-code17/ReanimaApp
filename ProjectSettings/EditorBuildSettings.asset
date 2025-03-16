@@ -6,19 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/reviuvrGameCAT.unity
-    guid: 6c004d7222da9c646a640df9e9d7f794
-=======
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 2c955fb3fbbb86f4f833a5f928e6eac5
+  - enabled: 1
+    path: Assets/Scenes/menuJoc.unity
+    guid: 035b54f178f163145b17756f0cb66879
+  - enabled: 1
     path: Assets/Scenes/menuPreguntes.unity
-    guid: f9f0cfbd9ebaea24c9d5ac93f32090fd
->>>>>>> 628bc49d2c7f297c228fce969c37ae2c82c472f8
+    guid: 9c8ff8b9667b9444a9c82c19a25f9bf5
   - enabled: 1
-    path: Assets/Scenes/SnapInteractable.unity
-    guid: c6c19ba3a094fd8499caa2a876e4947c
-  - enabled: 1
-    path: Assets/Scenes/TryPareds.unity
-    guid: 9ac76d62e0ea3114ba16e297afd11398
+    path: Assets/Scenes/preguntasCAT.unity
+    guid: 9c6e18ae08e310b4ea22ecdbaf723ce6
   - enabled: 1
     path: Assets/Scenes/preguntasEN.unity
     guid: f7753363d8cbdab438ee92a9f128be42
@@ -27,13 +25,19 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/reviuvrGameEN.unity
+    guid: 6c004d7222da9c646a640df9e9d7f794
+  - enabled: 1
+    path: Assets/Scenes/reviuvrGameCAT.unity
     guid: 64c72e1180352c44fbca0157197bf49f
   - enabled: 1
     path: Assets/Scenes/reviuvrGameES.unity
     guid: 9d88490818749c94596b513317140378
   - enabled: 1
-    path: Assets/Scenes/preguntasCAT.unity
-    guid: 9c6e18ae08e310b4ea22ecdbaf723ce6
+    path: Assets/Scenes/TryPareds.unity
+    guid: 9ac76d62e0ea3114ba16e297afd11398
+  - enabled: 1
+    path: Assets/Scenes/SnapInteractable.unity
+    guid: c6c19ba3a094fd8499caa2a876e4947c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1703383cc6a070e41a7fa97088796f17, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9dda50cfed2280049877429a7fd2cacf, type: 2}
