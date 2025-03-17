@@ -23,6 +23,7 @@ public class Preguntas
 public class Questions : MonoBehaviour
 {
     int puntuacio = 0;
+    public string idioma;
     public GameObject canvas;
 
     public GameObject canvasResponse;
@@ -35,6 +36,10 @@ public class Questions : MonoBehaviour
     public TMPro.TextMeshPro  resposta2;
     public TMPro.TextMeshPro  resposta3;
     public TMPro.TextMeshPro  resposta4;
+
+    public TMPro.TextMeshPro  continuarRes;
+    public TMPro.TextMeshPro  reintentarRes;
+
 
 
     public TMPro.TextMeshProUGUI pregunta;
@@ -76,10 +81,26 @@ public class Questions : MonoBehaviour
 
     void ShowQuestion()
     {
-        if (preguntaActualIndex >= 5)  
+        if (preguntaActualIndex >= 5) 
         {
-
-            resultado.text = "Has acertado " + puntuacio + " de 5 preguntas.";
+            string idioma_respuesta = PlayerPrefs.GetString("idioma");
+            if(idioma_respuesta == "CAT")
+            {
+                resultado.text = "Has encertat " + puntuacio + " de 5 preguntes.";
+                continuarRes.text = "Continuar";
+                reintentarRes.text = "Tornar a intentar";
+            }
+            else if(idioma_respuesta == "EN")
+            {
+                resultado.text = "You have answered " + puntuacio + " of 5 questions.";
+                continuarRes.text = "Continue";
+                reintentarRes.text = "Try again";
+            }else
+            {
+                resultado.text = "Has acertado " + puntuacio + " de 5 preguntas.";
+                continuarRes.text = "Continuar";
+                reintentarRes.text = "Volver a intentar";
+            }
             canvas.SetActive(false);
             canvasResponse.SetActive(true);
             return;
@@ -116,7 +137,7 @@ public class Questions : MonoBehaviour
 
     void LoadQuestions()
     {
-        string json = @"
+        string jsonES = @"
         {
             ""preguntas"": [
                 {
@@ -220,8 +241,231 @@ public class Questions : MonoBehaviour
             ]
         }";
 
+        string jsonCAT = @"
+        {
+            ""preguntas"": [
+                {
+                    ""pregunta"": ""Què significa RCP?"",
+                    ""resposta1"": ""Reanimació cardiopulmonar."",
+                    ""resposta2"": ""Recuperació cardiopulmonar."",
+                    ""resposta3"": ""Reacció cardíaca primària."",
+                    ""resposta4"": ""Rehabilitació cardíaca professional.""
+                },
+                {
+                    ""pregunta"": ""Quin és el primer pas abans d'iniciar RCP?"",
+                    ""resposta1"": ""Verificar seguretat."",
+                    ""resposta2"": ""Començar compressions."",
+                    ""resposta3"": ""Donar ventilacions."",
+                    ""resposta4"": ""Trucar a l'hospital.""
+                },
+                {
+                    ""pregunta"": ""Quantes compressions per minut s'han de fer?"",
+                    ""resposta1"": ""100-120."",
+                    ""resposta2"": ""Menys de 60."",
+                    ""resposta3"": ""Al voltant de 50."",
+                    ""resposta4"": ""No importa.""
+                },
+                {
+                    ""pregunta"": ""Quina és la profunditat correcta de les compressions?"",
+                    ""resposta1"": ""5 cm."",
+                    ""resposta2"": ""Menys de 2 cm."",
+                    ""resposta3"": ""3 cm."",
+                    ""resposta4"": ""Més de 10 cm.""
+                },
+                {
+                    ""pregunta"": ""Quina és la relació de compressions i ventilacions?"",
+                    ""resposta1"": ""30:2."",
+                    ""resposta2"": ""15:1."",
+                    ""resposta3"": ""40:5."",
+                    ""resposta4"": ""No fixa.""
+                },
+                {
+                    ""pregunta"": ""Què s'ha de fer si la víctima no respon?"",
+                    ""resposta1"": ""Iniciar RCP."",
+                    ""resposta2"": ""Donar aigua."",
+                    ""resposta3"": ""Esperar ambulància."",
+                    ""resposta4"": ""Sacsejar la víctima.""
+                },
+                {
+                    ""pregunta"": ""Quan s'ha d'utilitzar un DEA?"",
+                    ""resposta1"": ""Immediatament, sense pols."",
+                    ""resposta2"": ""Si està conscient."",
+                    ""resposta3"": ""Només en nens."",
+                    ""resposta4"": ""Després de 30 minuts.""
+                },
+                {
+                    ""pregunta"": ""Com s'han de col·locar les mans en RCP?"",
+                    ""resposta1"": ""Al centre del pit."",
+                    ""resposta2"": ""Al costat esquerre."",
+                    ""resposta3"": ""Sota el melic."",
+                    ""resposta4"": ""Al coll.""
+                },
+                {
+                    ""pregunta"": ""Cada quant s'han de rotar els reanimadors?"",
+                    ""resposta1"": ""Cada 2 minuts."",
+                    ""resposta2"": ""Cada 10 minuts."",
+                    ""resposta3"": ""Quan es cansin."",
+                    ""resposta4"": ""No és necessari.""
+                },
+                {
+                    ""pregunta"": ""Què fer si la víctima comença a respirar?"",
+                    ""resposta1"": ""Aturar RCP, posició de recuperació."",
+                    ""resposta2"": ""Continuar RCP."",
+                    ""resposta3"": ""Més compressions."",
+                    ""resposta4"": ""Esperar que parli.""
+                },
+                {
+                    ""pregunta"": ""Què fer si la víctima vomita durant RCP?"",
+                    ""resposta1"": ""Girar-la de costat."",
+                    ""resposta2"": ""No fer res."",
+                    ""resposta3"": ""Netejar la boca."",
+                    ""resposta4"": ""Reprendre compressions.""
+                },
+                {
+                    ""pregunta"": ""Què fer si no hi ha un DEA disponible?"",
+                    ""resposta1"": ""Continuar RCP."",
+                    ""resposta2"": ""Esperar ajuda."",
+                    ""resposta3"": ""Buscar un DEA."",
+                    ""resposta4"": ""Donar ventilacions.""
+                },
+                {
+                    ""pregunta"": ""Quin és el ritme correcte de les compressions?"",
+                    ""resposta1"": ""Ràpid i ferm."",
+                    ""resposta2"": ""Lent i suau."",
+                    ""resposta3"": ""No importa."",
+                    ""resposta4"": ""Interrompre freqüentment.""
+                },
+                {
+                    ""pregunta"": ""Com saber si les compressions són efectives?"",
+                    ""resposta1"": ""Moviment del pit."",
+                    ""resposta2"": ""Pols visible."",
+                    ""resposta3"": ""Cos calent."",
+                    ""resposta4"": ""Respiració normal.""
+                }
+            ]
+        }";
 
-        preguntas = JsonUtility.FromJson<Preguntas>(json);
+        string jsonEN = @"
+        {
+            ""preguntas"": [
+                {
+                    ""pregunta"": ""What does CPR stand for?"",
+                    ""resposta1"": ""Cardiopulmonary resuscitation."",
+                    ""resposta2"": ""Cardiopulmonary recovery."",
+                    ""resposta3"": ""Primary cardiac reaction."",
+                    ""resposta4"": ""Professional cardiac rehabilitation.""
+                },
+                {
+                    ""pregunta"": ""What is the first step before starting CPR?"",
+                    ""resposta1"": ""Check for safety."",
+                    ""resposta2"": ""Start compressions."",
+                    ""resposta3"": ""Give ventilations."",
+                    ""resposta4"": ""Call the hospital.""
+                },
+                {
+                    ""pregunta"": ""How many compressions per minute should be performed?"",
+                    ""resposta1"": ""100-120."",
+                    ""resposta2"": ""Less than 60."",
+                    ""resposta3"": ""Around 50."",
+                    ""resposta4"": ""It doesn’t matter.""
+                },
+                {
+                    ""pregunta"": ""What is the correct compression depth?"",
+                    ""resposta1"": ""5 cm."",
+                    ""resposta2"": ""Less than 2 cm."",
+                    ""resposta3"": ""3 cm."",
+                    ""resposta4"": ""More than 10 cm.""
+                },
+                {
+                    ""pregunta"": ""What is the compression-to-ventilation ratio?"",
+                    ""resposta1"": ""30:2."",
+                    ""resposta2"": ""15:1."",
+                    ""resposta3"": ""40:5."",
+                    ""resposta4"": ""Not fixed.""
+                },
+                {
+                    ""pregunta"": ""What should you do if the victim does not respond?"",
+                    ""resposta1"": ""Start CPR."",
+                    ""resposta2"": ""Give water."",
+                    ""resposta3"": ""Wait for an ambulance."",
+                    ""resposta4"": ""Shake the victim.""
+                },
+                {
+                    ""pregunta"": ""When should an AED be used?"",
+                    ""resposta1"": ""Immediately, if no pulse."",
+                    ""resposta2"": ""If they are conscious."",
+                    ""resposta3"": ""Only on children."",
+                    ""resposta4"": ""After 30 minutes.""
+                },
+                {
+                    ""pregunta"": ""Where should hands be placed during CPR?"",
+                    ""resposta1"": ""Center of the chest."",
+                    ""resposta2"": ""Left side."",
+                    ""resposta3"": ""Below the navel."",
+                    ""resposta4"": ""On the neck.""
+                },
+                {
+                    ""pregunta"": ""How often should rescuers switch roles?"",
+                    ""resposta1"": ""Every 2 minutes."",
+                    ""resposta2"": ""Every 10 minutes."",
+                    ""resposta3"": ""When they get tired."",
+                    ""resposta4"": ""Not necessary.""
+                },
+                {
+                    ""pregunta"": ""What should you do if the victim starts breathing?"",
+                    ""resposta1"": ""Stop CPR, place in recovery position."",
+                    ""resposta2"": ""Continue CPR."",
+                    ""resposta3"": ""Give more compressions."",
+                    ""resposta4"": ""Wait for them to speak.""
+                },
+                {
+                    ""pregunta"": ""What should you do if the victim vomits during CPR?"",
+                    ""resposta1"": ""Turn them to one side."",
+                    ""resposta2"": ""Do nothing."",
+                    ""resposta3"": ""Clean their mouth."",
+                    ""resposta4"": ""Resume compressions.""
+                },
+                {
+                    ""pregunta"": ""What if no AED is available?"",
+                    ""resposta1"": ""Continue CPR."",
+                    ""resposta2"": ""Wait for help."",
+                    ""resposta3"": ""Look for an AED."",
+                    ""resposta4"": ""Give ventilations.""
+                },
+                {
+                    ""pregunta"": ""What is the correct compression rhythm?"",
+                    ""resposta1"": ""Fast and firm."",
+                    ""resposta2"": ""Slow and gentle."",
+                    ""resposta3"": ""It doesn’t matter."",
+                    ""resposta4"": ""Interrupt frequently.""
+                },
+                {
+                    ""pregunta"": ""How do you know if compressions are effective?"",
+                    ""resposta1"": ""Chest movement."",
+                    ""resposta2"": ""Visible pulse."",
+                    ""resposta3"": ""Warm body."",
+                    ""resposta4"": ""Normal breathing.""
+                }
+            ]
+        }";
+
+
+        if(idioma == "CAT")
+        {
+            PlayerPrefs.SetString("idioma", "CAT"); 
+            preguntas = JsonUtility.FromJson<Preguntas>(jsonCAT);
+        }
+        else if(idioma == "EN")
+        {
+            PlayerPrefs.SetString("idioma", "EN");
+            preguntas = JsonUtility.FromJson<Preguntas>(jsonEN);
+        }
+        else
+        {
+            PlayerPrefs.SetString("idioma", "ES");
+            preguntas = JsonUtility.FromJson<Preguntas>(jsonES);
+        }
+
     }
 
   
@@ -276,9 +520,9 @@ public class Questions : MonoBehaviour
         Start();
     }
 
-    public void nextScene()
+    public void nextScene(string scene)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("reviuvr");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 }
 
